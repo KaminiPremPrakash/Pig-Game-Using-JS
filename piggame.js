@@ -1,8 +1,6 @@
 var scores, roundScore, activeplayer;
 
-scores = [0, 0];
-roundScore = 0;
-activeplayer = 0;
+reset(); //to initialize variables
 //dice = Math.floor(Math.random() * 6) + 1; // to generate numbs from 1 to 6 randomly
 //document.querySelector('#current-' + activeplayer).textContent = dice;
 //var x = document.querySelector('#score-0').textContent;
@@ -26,8 +24,6 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
     } else {
         //goes to next player
         switchPlayer();
-
-
     }
 
 });
@@ -42,16 +38,13 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
         document.querySelector('#name-' + activeplayer).textContent = 'Winner!!!';
         document.querySelector('#name-' + activeplayer).style.color = "Red";
         document.querySelector('#name-' + activeplayer).style.fontweight = "Bold";
+        document.querySelector('.dice').style.display = 'none';
     }
     switchPlayer();
 
 });
 
-//setting scores to 0
-document.getElementById('score-0').textContent = '0';
-document.getElementById('score-1').textContent = '0';
-document.getElementById('current-1').textContent = '0';
-document.getElementById('current-0').textContent = '0'
+
 
 function switchPlayer() {
     roundScore = 0;
@@ -69,3 +62,18 @@ function switchPlayer() {
 
     document.querySelector('.dice').style.display = "none";
 };
+
+document.querySelector('.btn-new').addEventListener('click', reset);
+
+function reset() {
+    score = [0, 0];
+    activeplayer = 0;
+    roundScore = 0;
+    document.querySelector('.dice').style.display = "none";
+    //setting scores to 0
+    document.getElementById('score-0').textContent = '0';
+    document.getElementById('score-1').textContent = '0';
+    document.getElementById('current-1').textContent = '0';
+    document.getElementById('current-0').textContent = '0';
+    document.querySelector('#name-' + activeplayer).textContent = 'PLAYER ' + activeplayer;
+}
