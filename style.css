@@ -98,7 +98,7 @@ body {
     content: "\2022";
     font-size: 47px;
     position: absolute;
-    color: pink;
+    color: red;
     top: -8px;
     right: 160px;
 }
