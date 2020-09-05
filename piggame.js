@@ -40,9 +40,9 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
     //check if player won the game
     if (scores[activeplayer] >= 100) {
         document.querySelector('#name-' + activeplayer).textContent = 'Winner!!! Congratulations!!!';
-        document.querySelector('#name-' + activeplayer).style.color = "Red";
-        document.querySelector('#name-' + activeplayer).style.fontweight = "Bold";
         document.querySelector('.dice').style.display = 'none';
+        document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
+        document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
         gamePlaying = false;
     }
     else {
