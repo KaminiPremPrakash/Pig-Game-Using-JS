@@ -1,13 +1,6 @@
 var scores, roundScore, activeplayer, gamePlaying;
 
 reset(); //to initialize variables
-//dice = Math.floor(Math.random() * 6) + 1; // to generate numbs from 1 to 6 randomly
-//document.querySelector('#current-' + activeplayer).textContent = dice;
-//var x = document.querySelector('#score-0').textContent;
-//console.log(x);
-//to hide the dice
-//document.querySelector('.dice').style.display = "none";
-//we dont write btn() bcz we dont want to call it, it will be called by event listener
 
 //document.querySelector('.btn-roll').addEventListener('click', btn);
 
@@ -79,6 +72,10 @@ function reset() {
     gamePlaying = true;
     document.querySelector('.dice').style.display = "none";
     //setting scores to 0
+    document.getElementById('score-0').textContent = '0';
+    document.getElementById('score-1').textContent = '0';
+    document.getElementById('current-0').textContent = '0';
+    document.getElementById('current-1').textContent = '0';
     document.getElementById('name-0').textContent = 'Player 1';
     document.getElementById('name-1').textContent = 'Player 2';
     document.querySelector('.player-0-panel').classList.remove('winner');
