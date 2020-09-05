@@ -17,9 +17,9 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
     if (gamePlaying) {
 
         var dice = Math.floor(Math.random() * 6) + 1; //create a random number between 1-6
-        var diceDOM = document.querySelector('.dice')
-        diceDOM.querySelector('.dice').style.display = "block";
-        diceDOM.querySelector('.dice').src = 'dice' + dice + '.png';
+        // var diceDOM = document.querySelector('.dice')
+        document.querySelector('.dice').style.display = "block";
+        document.querySelector('.dice').src = 'dice' + dice + '.png';
 
         if (dice !== 1) {
             //add score
@@ -39,7 +39,7 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
     document.querySelector('#score-' + activeplayer).textContent = scores[activeplayer];
     //check if player won the game
     if (scores[activeplayer] >= 100) {
-        document.querySelector('#name-' + activeplayer).textContent = 'Winner!!!';
+        document.querySelector('#name-' + activeplayer).textContent = 'Winner!!! Congratulations!!!';
         document.querySelector('#name-' + activeplayer).style.color = "Red";
         document.querySelector('#name-' + activeplayer).style.fontweight = "Bold";
         document.querySelector('.dice').style.display = 'none';
